@@ -1,0 +1,116 @@
+﻿@model FypProject.Models.Contact
+
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<section class="section pagegrey">
+    <div class="container">
+        <div class="title-area text-center">
+            <h2>Get In Touch <small>If you have any questions about our services, please submit a contact form.</small></h2>
+            <div class="bread">
+                <ol class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li class="active">Contact</li>
+                </ol>
+            </div><!-- end bread -->
+        </div><!-- /.pull-right -->
+    </div><!-- end container -->
+</section>
+<section class="section">
+    <div class="container">
+        <div class="content">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-6 col-sm-offset-3">
+                            <div class="general-title">
+                                <h4>Contact Form</h4>
+                                <hr>
+                            </div><!-- end title -->
+                            @using (Html.BeginForm("Create", "Contacts", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                            {
+                                @Html.AntiForgeryToken()
+
+                                <div class="form-horizontal">
+
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.CellNo, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.EditorFor(model => model.CellNo, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.CellNo, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Message, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        <div class="col-md-10">
+                                            @Html.TextAreaFor(model => model.Message, new {@class = "form-control" } )
+                                            @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-10">
+                                            <input type="submit" value="Send Form" class="btn btn-primary btn-file" />
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+
+                        </div><!-- end col -->
+                    </div><!-- end row -->
+                    <hr class="largehr">
+                    <div class="row text-center">
+                        <div class="col-sm-6">
+                            <div class="team-desc">
+                                <h4>Head Office</h4>
+                                <small>WEBMARKET HQ</small>
+                                <p>121 King Street, Main Plaza</p>
+                                <a href="#"><i class="fa fa-phone"></i> 03066201340</a><br>
+                                <a href="#"><i class="fa fa-fax"></i> 03368574023</a><br>
+                                <a href="#"><i class="fa fa-envelope-o"></i> hamza.satti159@gmail.com</a>
+                            </div><!-- end team-image -->
+                        </div><!-- end col -->
+                        <div class="col-sm-6">
+                            <div class="team-desc">
+                                <h4>Pakistan Office</h4>
+                                <small>WEBMARKET HQ</small>
+                                <p>121 Street, Johar Town, Pakistan.</p>
+                                <a href="#"><i class="fa fa-phone"></i> 03066201340</a><br>
+                                <a href="#"><i class="fa fa-fax"></i> 03368574023</a><br>
+                                <a href="#"><i class="fa fa-envelope-o"></i> hamza.satti159@gmail.com</a>
+                            </div><!-- end team-image -->
+                        </div><!-- end col -->
+                    </div><!-- end row -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end content -->
+    </div>
+</section>
+<div class="googlemap">
+    <div id="map"></div>
+</div><!-- end googlemap -->
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

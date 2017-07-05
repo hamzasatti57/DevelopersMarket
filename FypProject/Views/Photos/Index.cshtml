@@ -1,0 +1,210 @@
+﻿@model IEnumerable<FypProject.Models.Photo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<section class="section nopad single-wrap firstsection">
+    <div class="absolutetitle">
+        <div class="page-title public-profile-title">
+            <div class="row">
+                <div class="col-sx-12 text-center">
+                    <h3>More than 46,200 Stock Photos &  Gif's From $0</h3>
+                    <h4 style="color:white">Over 9 million digital products created by a global comunity of developers, <br> designers,photographers,illustrators & producers</h4>
+                </div>
+            </div>
+            <div class="content-before">
+                <div class="row">
+                    <div class="col-md-12 col-sx-12 cen-xs">
+                        <form class="dropForm">
+                            <div class="input-prepend">
+                                <input type="text" class="form-control" placeholder="Search anything here.">
+
+                                <button class="btn btn-primary hidden-xs" tabindex="-1"><i class="fa fa-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div><!-- end row -->
+            </div><!-- end content before -->
+        </div>
+    </div><!-- end absolutetitle -->
+    <div class="main hidden-xs">
+        <div id="ri-grid" class="ri-grid ri-grid-size-2 ri-shadow">
+            <img class="ri-loading-image" src="~/images/loading.gif" />
+            <ul>
+                <li><a href="#"><img src="~/images/upload/item_01.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_02.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_03.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_04.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_05.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_06.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_07.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_08.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_09.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_10.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_11.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_12.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_13.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_14.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_15.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_16.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_17.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_18.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_19.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_20.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_21.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_22.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_23.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_24.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_25.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_26.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_27.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_28.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_29.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_30.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_31.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_32.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_33.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_34.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_35.jpg" alt=""></a></li>
+                <li><a href="#"><img src="~/images/upload/item_36.jpg" alt=""></a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section class="section pagegrey">
+    <div class="container">
+        <div class="title-area text-center">
+            <h2>Category : Stock Photos And Gif's <small>More than 46,200 Stock Photos &  Gif's on the Catalog Market.</small></h2>
+            <div class="bread">
+                <ol class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li class="active">Category</li>
+                    <li class="active">Stock Photos</li>
+                </ol>
+            </div><!-- end bread -->
+        </div><!-- /.pull-right -->
+    </div><!-- end container -->
+</section>
+<section class="section">
+    <div class="container">
+        <div class="content">
+            <div class="row">
+                <div class="col-md-9 col-sm-12 pull-right">
+                    <div class="storelist panel panel-info">
+                        <div class="panel-body">
+                            @foreach (var item in Model)
+                            {
+                                <div class="form-group row wow fadeIn">
+                                    <div class="col-sm-2 col-xs-12">
+                                        <a class="" href="~/Views/Projects/Details.cshtml"><img src="@Url.Content(item.ImageUrl)" alt="not found" /></a>
+                                    </div>
+                                    <div class="col-sm-7 col-xs-12">
+                                        <h4><a href="@Url.Action("Details", new { id=item.PhotoID})">@Html.DisplayFor(modelItem => item.Name)</a></h4>
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-user"></i>@Html.DisplayFor(modelItem => item.ItemLevel)</a></li>
+                                            <li><a href="#"><i class="fa fa-envelope-o"></i> Get Support</a></li>
+                                            <li><a href="#"><i class="fa fa-folder-open-o"></i> @Html.DisplayFor(modelItem => item.Category)</a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-3 col-xs-12 text-center">
+                                        <ul>
+                                            <li><a href="@Url.Action("Details", new { id=item.PhotoID})" class="btn btn-primary btn-block">Buy now</a></li>
+                                            <li><a style="font-size:20px">$@Html.DisplayFor(modelItem => item.Price)</a></li>
+                                            <li>
+                                                <div class="rating">
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                    <i class="fa fa-star"></i>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <td>
+                                    @Html.ActionLink("Details", "Details", new { id = item.PhotoID }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.PhotoID })
+                                </td>
+                            }
+                        </div><!-- end panel-body -->
+                    </div><!-- end storelist -->
+                    <hr class="invis">
+                    <div class="content-after text-center">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <nav class="pagination-wrapper">
+                                    <ul class="pagination">
+                                        <li><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">5</a></li>
+                                        <li>
+                                            <a href="#" aria-label="Next">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <!-- end row -->
+                    </div>
+                    <!-- end content after -->
+
+                </div><!-- end col -->
+                <div id="sidebar" class="col-md-3 col-xs-12">
+                    <div class="widget">
+                        <div class="widget-title">
+                            <h4>Subscribe Us</h4>
+                        </div><!-- end widget-title -->
+                        <div class="contact_form">
+                            <form id="contactform" action="http://showwp.com/demos/catalog/photo-version/contact.php" name="contactform" method="post">
+                                <input type="text" name="name" id="name" class="form-control" placeholder="Name">
+                                <input type="text" name="email" id="email" class="form-control" placeholder="Email">
+                                <button type="submit" value="SEND" id="submit" class="btn btn-primary"> Subscribe</button>
+                            </form>
+                        </div>
+                    </div><!-- end widget -->
+                    <div class="widget">
+                        <div class="widget-title">
+                            <h4>Recent Posts</h4>
+                        </div><!-- end widget-title -->
+                        <div class="shopwidget">
+                            <ul class="shop-list">
+                                <li>
+                                    <div class="alignleft">
+                                        <img src="~/images/upload/blog_01.jpg" alt="">
+                                    </div><!-- end entry -->
+                                    <h3><a href="#" title="">90+ Free Web App...</a></h3>
+                                    <small>22.12.2015</small>
+                                    <a class="new-price" href="#">Read More</a>
+                                </li>
+                                <li>
+                                    <div class="alignleft">
+                                        <img src="~/images/upload/blog_02.jpg" alt="">
+                                    </div><!-- end entry -->
+                                    <h3><a href="#" title="">WordPress Custom...</a></h3>
+                                    <small>22.12.2015</small>
+                                    <a class="new-price" href="#">Read More</a>
+                                </li>
+                                <li>
+                                    <div class="alignleft">
+                                        <img src="~/images/upload/blog_03.jpg" alt="">
+                                    </div><!-- end entry -->
+                                    <h3><a href="#" title="">How to Optimize...</a></h3>
+                                    <small>22.12.2015</small>
+                                    <a class="new-price" href="#">Read More</a>
+                                </li>
+                            </ul><!-- end blog list -->
+                        </div><!-- end blogwidget -->
+                    </div><!-- end widget -->
+                    <!-- end widget -->
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end content -->
+    </div>
+
+</section>

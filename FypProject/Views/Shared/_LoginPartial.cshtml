@@ -1,0 +1,40 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+    @Html.AntiForgeryToken()
+
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+        </li>
+        <li class="dropdown membermenu hovermenu">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="~/images/upload/member5.jpg" alt="" class="img-circle"> <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                
+                <li class="dropdown-header">Dashboard</li>
+                <li>@Html.ActionLink("Public Profile", "PublicProfile", "UpdateProfiles")</li>
+                <li>@Html.ActionLink("Shop Favorites", "ShopFavorites", "Home")</li>
+                <li>@Html.ActionLink("Upload Item", "Type", "Home")</li>
+                <li><hr></li>
+                <li class="dropdown-header">Profile</li>
+                <li>@Html.ActionLink("Update Profile", "Create", "UpdateProfiles")</li>
+                <li>@Html.ActionLink("Edit Profile", "Index", "UpdateProfiles")</li>
+                <li><a href="javascript:document.getElementById('logoutForm').submit()">Logout</a></li>
+                <li><hr></li>
+                <li class="dropdown-header">Settings</li>
+                <li>@Html.ActionLink("Account Settings", "Index", "Manage")</li>
+            </ul>
+        </li>
+    </ul>
+ 
+    }
+}
+else
+{
+    <ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
+        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+    </ul>
+}

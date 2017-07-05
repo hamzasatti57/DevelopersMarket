@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewBag.Title = "Faqs";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<section class="section pagegrey">
+    <div class="container">
+        <div class="title-area text-center">
+            <h2>Faqs <small>Friendly Asked Questions</small></h2>
+            <div class="bread">
+                <ol class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li class="active">Faqs</li>
+                </ol>
+            </div><!-- end bread -->
+        </div><!-- /.pull-right -->
+    </div><!-- end container -->
+</section>
+<section class="section">
+    <div class="container">
+        <div class="content">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="page-content">
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2 general-title">
+                                <h4>Friendly Asked Questions <span class="hidden-xs"><a> @Html.ActionLink("Other Issues? Send us Email", "Contact", "Contacts", new {area = "" }, new {@class = "" })</a></span></h4>
+                                <hr>
+                            </div><!-- end col -->
+                        </div><!-- end row -->
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2 ">
+                                <div class="panel-group" id="accordion1" role="tablist" aria-multiselectable="true">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingOne">
+                                            <h4 class="panel-title">
+                                                <a role="button" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">How to Create an Account?</a>
+                                            </h4>
+                                        </div><!-- end heading -->
+                                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                            <div class="panel-body">
+                                                <p>You can register ur self. After Registration update ur Profile and enjoy WebMarket.</p>
+                                            </div>
+                                        </div>
+                                    </div><!-- end panel -->
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingTwo">
+                                            <h4 class="panel-title">
+                                                <a role="button" data-toggle="collapse" data-parent="#accordion1" href="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">How to Upload Item?</a>
+                                            </h4>
+                                        </div><!-- end heading -->
+                                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                            <div class="panel-body">
+                                                <p>On ur Account Sidebar there is a upload item option. </p>
+                                            </div>
+                                        </div>
+                                    </div><!-- end panel -->
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingThree">
+                                            <h4 class="panel-title">
+                                                <a role="button" data-toggle="collapse" data-parent="#accordion1" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">How to make money?</a>
+                                            </h4>
+                                        </div><!-- end heading -->
+                                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                            <div class="panel-body">
+                                                <p>You can make money by uploading ur products and sell them with appropriate price. </p>
+                                            </div>
+                                        </div>
+                                    </div><!-- end panel -->
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingFour">
+                                            <h4 class="panel-title">
+                                                <a role="button" data-toggle="collapse" data-parent="#accordion1" href="#collapseFour" aria-expanded="true" aria-controls="collapseFour">Can i get support!</a>
+                                            </h4>
+                                        </div><!-- end heading -->
+                                        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                                            <div class="panel-body">
+                                                <p>Yes! In case of any querry u can contact us on our contacts form. </p>
+                                            </div>
+                                        </div>
+                                    </div><!-- end panel -->
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingFive">
+                                            <h4 class="panel-title">
+                                                <a role="button" data-toggle="collapse" data-parent="#accordion1" href="#collapseFive" aria-expanded="true" aria-controls="collapseFive">How can I get a Help?</a>
+                                            </h4>
+                                        </div><!-- end heading -->
+                                        <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                                            <div class="panel-body">
+                                                <p>You will be recieve an email on ur email address. </p>
+                                            </div>
+                                        </div>
+                                    </div><!-- end panel -->
+                                </div><!-- end panel-group -->
+                            </div><!-- end col -->
+                        </div><!-- end row -->
+                        <hr class="invis">
+                        <!-- end row -->
+                    </div>
+                </div><!-- end col -->
+            </div><!-- end row -->
+        </div><!-- end content -->
+    </div>
+</section>
+

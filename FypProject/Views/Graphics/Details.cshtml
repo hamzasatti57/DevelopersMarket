@@ -1,0 +1,143 @@
+﻿@model FypProject.Models.Graphic
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<section class="section pagegrey">
+    <div class="container">
+        <div class="title-area text-center">
+            <h2>Single Item <small>Feel free to Contact us </small></h2>
+            <div class="bread">
+                <ol class="breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li class="active">Single Item</li>
+                </ol>
+            </div>
+            <!-- end bread -->
+        </div>
+        <!-- /.pull-right -->
+    </div>
+    <!-- end container -->
+</section>
+<section class="section">
+    <div class="container">
+        <div class="content">
+            <div class="row">
+                <div id="singlewrapper" class="col-md-7">
+                    <div class="content nopad">
+                        <div class="item-single-wrapper">
+                            <div class="item-box">
+                                <div class="item-media text-center">
+                                    <img src="@Url.Content(Model.ImageUrl)" alt="not found" />
+                                </div>
+                                @*http://www.bing.com*@
+                                <a href='@Html.DisplayFor(model => model.LiveDemo)' class="btn btn-primary btn-block">Demo</a>
+                                <div class="item-desc">
+                                    <h4>@Html.DisplayNameFor(model => model.Description)</h4>
+                                    <p> @Html.DisplayFor(model => model.Description)</p>
+                                    <br />
+                                    <br />
+
+                                </div>
+                                <!-- end item-desc -->
+                            </div>
+                            <!-- end item-box -->
+                        </div>
+                        <!-- end item-single-wrapper -->
+                    </div>
+                    <!-- end content -->
+                </div>
+                <!-- end singlewrapper -->
+                <div class="col-md-5">
+                    <div class="boxes boxs">
+                        <div class="desiger-details text-center">
+                            <img src="~/images/upload/cat_05.png" class="img-circle" alt="">
+                            <h4><a href="public-profile.html">@Html.DisplayFor(model => model.Name)</a></h4>
+                            <small><a href="#"><i class="fa fa-envelope-o"></i> Send a Message</a> &nbsp;&nbsp; <a href="#"><i class="fa fa-user-plus"></i> Follow Amanda's</a> </small>
+                        </div>
+                        <!-- end designer -->
+                    </div>
+                    <!-- end boxes -->
+                    <div class="boxes boxs">
+                        <div class="item-price text-center">
+                            <p>$@Html.DisplayFor(model => model.Price)</p>
+                            <em><a href="#">Regular License</a></em>
+                            <div class="rating">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                            <hr>
+                            <small><a href="#"><i class="fa fa-star-o"></i> Add to Favorites</a> &nbsp;&nbsp; <a href="#"><i class="fa fa-heart-o"></i> Like it</a> </small>
+                            <hr>
+                            <div class="table-responsive table-buy">
+                                <table class="table">
+                                    <tbody>
+                                        <tr>
+                                            <th>Add To Cart➩</th>
+                                            <th class="btn btn-primary btn-sm">@Html.ActionLink("Add to Cart", "AddtoCart", new { controller = "ShoppingCart", id = Model.GraphicID })</th>
+                                        </tr>
+                                        <tr>
+                                            <th>Buy here➩</th>
+                                            <th class="btn btn-primary btn-sm">@Html.ActionLink("Order Now", "Create", new { controller = "Orders"})</th>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <ul class="list-inline social">
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            </ul>
+                        </div>
+                        <!-- end price -->
+                    </div>
+                    <!-- end boxes -->
+                    <div class="boxes boxs">
+                        <div class="item-details">
+                            <table>
+                                <tr>
+                                    <td>Release on:</td>
+                                    <td>2016-02-21</td>
+                                </tr>
+                                <tr>
+                                    <td>Artist:</td>
+                                    <td>Hamza Satti</td>
+                                </tr>
+                               
+                                <tr>
+                                    <td>Country:</td>
+                                    <td>Holland</td>
+                                </tr>
+                                <tr>
+                                    <td>Category:</td>
+                                    <td><a href="#">@Html.DisplayFor(model => model.Category)</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Tags:</td>
+                                    <td>
+                                        <div class="product-tags">
+                                            <a href="#">@Html.DisplayFor(model => model.Tags)</a>
+
+                                        </div>
+                                        <!-- en tags -->
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!-- end item-details -->
+                    </div>
+                    <!-- end boxes -->
+                </div>
+                <!-- end sidebar -->
+            </div>
+        </div>
+        <!-- end content -->
+    </div>
+</section>
